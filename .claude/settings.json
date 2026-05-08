@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "spam|deliverability|trigger word|banned word|check my email|check my copy|scan this|review this email|will this get flagged|is this spammy|cold email|subject line|follow.up|sequence|linkedin dm|outreach copy|rewrite.*email|clean.*copy",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/revsculpt-inbox-active.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
