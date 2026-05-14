@@ -38,62 +38,66 @@ Standard spam checkers only catch the first failure. RevSculpt Inbox catches bot
 | Severity weighting (CRITICAL / HIGH / MEDIUM) | ✅ | ✗ |
 | Sequence mode with cross-step analysis | ✅ | ✗ |
 | Accuracy check before rewriting | ✅ | ✗ |
+| Plain speech clarity check on every rewrite | ✅ | ✗ |
+| ICP onboarding — targets rewrite to your buyer | ✅ | ✗ |
 | Dual-score gate — both must pass | ✅ | ✗ |
 
 ---
 
 ## What a Scan Looks Like
 
-Paste your email. This is what comes back:
+Before scanning, it asks three questions to target the rewrite to your buyer:
 
 ```
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-REVSCULPT INBOX SCAN
-Subject: Quick question about your outbound
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+Before I scan this, three quick questions:
 
-Deliverability Score:  54/100 — ❌ HIGH DELIVERABILITY RISK
-ICP Clarity Score:     40/100 — 🚫 DO NOT SEND
-Total violations:      9 (2 CRITICAL · 3 HIGH · 2 MEDIUM · 2 format)
+1. What industry are you targeting?
+2. What job title are you reaching?
+3. What's your offer in one line?
+```
 
-▸ Layer 1 — Token Blacklist ──────────────────────
-[L1 · TOKEN] "guarantee" → CRITICAL · −10 pts
-  → rewrite: remove the guarantee claim — name the mechanism instead
+Then it scans and returns:
 
-[L1 · TOKEN] "free" → HIGH · −7 pts
-  → rewrite: "no commitment to start" or remove entirely
+```
+[ REVSCULPT INBOX ]  Subject: Quick question about your outbound
 
-▸ Layer 2 — Phrase Patterns ──────────────────────
-[L2 · PATTERN] "just following up once" → Stale Follow-Up · −7 pts
-  → rewrite: state a new reason to reply — or don't send
+SCORECARD
+  Deliverability   54/100   HIGH RISK
+  ICP Clarity      40/100   FAILING
+  Violations       9 total — 2 critical  3 high  2 medium  2 format
 
-▸ Layer 3 — Risk Clusters ────────────────────────
-[L3 · CLUSTER] "guaranteed meetings" → Cluster 8: Unverified ROI · −8 pts
-  → rewrite: cite a real outcome from a real engagement
+FINDINGS
 
-▸ Layer 4 — Format Audit ─────────────────────────
-[L4 · FORMAT] Orphaned token: {{first_name}} · −5 pts
-  → fix: fill or remove before sending
+  CRITICAL
+  "guarantee faster results"
+  issue:   "guarantee" is a CRITICAL token — kills inbox placement
+  fix:     "in our experience working with teams at this stage..."
 
-▸ Layer 5 — Buyer Signal Check ───────────────────
-[L5 · BUYER] B1 Named Pain: FAILED · −15 pts
-  → fix: name a specific problem this buyer actually faces
+  HIGH
+  "free consultation"
+  issue:   "free" is a HIGH token
+  fix:     "open to a short conversation"
 
-[L5 · BUYER] B5 Buyer-First Opener: FAILED · −15 pts
-  → fix: open with their situation — not your pitch
+  MEDIUM
+  "just following up once"
+  issue:   stale follow-up pattern — filtered aggressively
+  fix:     state a new reason to reply — or don't send
 
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-REWRITTEN COPY
-Gate cleared in 2 pass(es) · zero violations confirmed
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  ICP — B1 Named Pain
+  issue:   no specific problem named — reads like a generic blast
 
-[Full rewrite — deliverability clean, buyer-signal confirmed, ready to send]
+  ICP — B5 Buyer-First Opener
+  issue:   opens with sender pitch, not buyer's situation
 
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-VERDICT
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+SEND-READY VERSION
+  [rewrite pass: 2]  [zero violations confirmed]
 
-Send-ready — Deliverability 94/100 · ICP Clarity 85/100.
+  [Full rewrite — deliverability clean, buyer-signal confirmed,
+   plain speech checked, ready to send]
+
+RESULT
+  Deliverability 94/100, ICP Clarity 85/100 — send-ready.
+  revsculpt.com
 ```
 
 ---
@@ -195,7 +199,7 @@ Then it rewrites. Not word swaps — full line rewrites from the idea underneath
   Complex words         →  plain words
 ```
 
-Every rewrite is checked against all six layers before it reaches you. If anything fails, it rewrites again.
+Every rewrite is checked against all six layers before it reaches you. If anything fails, it rewrites again. Each pass also runs a plain speech check — if a line clears spam but still reads like a marketer wrote it, it gets revised until it sounds like a real person wrote it.
 
 ---
 
@@ -203,7 +207,7 @@ Every rewrite is checked against all six layers before it reaches you. If anythi
 
 **Starting a scan**
 
-Type `/revsculpt-inbox` and paste your copy. That's it.
+Type `/revsculpt-inbox` and paste your copy. Before scanning, it asks three questions — industry, job title, and offer — so the rewrite targets your actual buyer instead of a generic one. If you've already given that context in your message, it skips the questions.
 
 If you'd rather just ask — that works too. Say *"check this for spam"* or *"will this land in inbox"* anywhere in Claude Code and the scan starts automatically. No slash command needed.
 
