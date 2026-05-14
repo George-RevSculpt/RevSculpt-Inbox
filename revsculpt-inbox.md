@@ -87,14 +87,7 @@ Normalize every word in the copy: lowercase, strip trailing punctuation. Check e
 
 Each token carries a severity weight assigned in `triggerwords.md`: **CRITICAL**, **HIGH**, or **MEDIUM**.
 
-Report each violation as:
-
-```
-[L1 · TOKEN]
-Found: "[token]" in → "[surrounding line]"
-Severity: CRITICAL / HIGH / MEDIUM
-Deduction: −10 / −7 / −4 pts
-```
+Classify each violation internally by severity (CRITICAL/HIGH → must fix, MEDIUM → worth fixing). Report using the output template format — plain language, no severity labels shown to the user.
 
 ---
 
@@ -110,14 +103,7 @@ Two sub-lists apply:
 
 **Seller-Centric Openers** — opening lines that center the sender rather than the buyer. These lower reply rates and signal low-effort outreach.
 
-Report each violation as:
-
-```
-[L2 · PATTERN]
-Found: "[matched phrase]"
-Type: Stale Follow-Up / Seller-Centric Opener
-Deduction: −7 pts
-```
+Layer 2 violations are always must fix. Report using the output template — quote the phrase, explain in plain language why it hurts, give the clean replacement.
 
 ---
 
@@ -129,14 +115,7 @@ Scan for any phrase that falls within one of the eight risk clusters. Flag the s
 
 The eight clusters are defined in `triggerwords.md`. Cluster 8 (Unverified ROI Claims) is the RevSculpt-specific cluster — it flags outcome promises not grounded in a specific, verifiable proof point.
 
-Report each violation as:
-
-```
-[L3 · CLUSTER]
-Found: "[matched phrase]"
-Cluster: [cluster name and number]
-Deduction: −8 pts
-```
+Layer 3 violations are always must fix. Report using the output template — quote the phrase, explain in plain language why it flags, give the clean replacement.
 
 ---
 
@@ -153,14 +132,7 @@ Check the full submission for these eight formatting violations. These are binar
 7. **Blank line stacking** — three or more consecutive empty lines
 8. **Symbol decoration** — promotional glyphs used for visual effect: ★ ✓ ► ✦ ⚡
 
-Report each violation as:
-
-```
-[L4 · FORMAT]
-Violation: [violation name]
-Found: "[flagged element or location]"
-Deduction: −5 pts
-```
+Layer 4 violations go under the FORMATTING section of the output. State what's wrong in plain language and what to change. No violation names or deduction amounts shown to the user.
 
 ---
 
@@ -182,15 +154,7 @@ Run six checks. Each failure deducts from the ICP Clarity Score only (no effect 
 
 **B6 — Length Discipline:** Is the email body 125 words or under? Flag over-length copy with word count.
 
-Report each failure as:
-
-```
-[L5 · BUYER SIGNAL]
-Check: B[number] — [check name]
-Status: FAILED
-ICP Deduction: −15 pts
-Note: [one sentence on what's missing and why it matters]
-```
+Layer 5 failures go under the BUYER SIGNALS section of the output. Describe what's missing in plain language tailored to the user's ICP context (industry, job title, offer). No check codes or deduction amounts shown to the user.
 
 ---
 
@@ -373,7 +337,7 @@ Examples: `Access Brand Communications` → `AB Communications` · `Calcon Mutua
 
 ## Output Template
 
-Use this exact structure. Full width — do not wrap sentences. Omit any violation block with zero findings.
+Use this exact structure. Full width — do not wrap sentences. Omit any section with zero findings. "Must fix" = CRITICAL and HIGH severity violations. "Worth fixing" = MEDIUM severity violations.
 
 ```
 [ REVSCULPT INBOX ]  Subject: [subject line or "no subject submitted"]
@@ -381,35 +345,35 @@ Use this exact structure. Full width — do not wrap sentences. Omit any violati
 SCORECARD
   Deliverability   [score]/100   [SEND-READY / REVISE / HIGH RISK / DO NOT SEND]
   ICP Clarity      [score]/100   [STRONG / WEAK / FAILING]
-  Violations       [n] total — [X] critical  [Y] high  [Z] medium  [W] format
+  Flags            [n] total — [X] must fix · [Y] worth fixing
 
-FINDINGS
+MUST FIX  (these will hurt inbox placement)
 
-  CRITICAL
-  [quote the flagged line]
-  issue:   [what was found and why it fails]
-  fix:     [rewritten line, ready to drop in]
+  "[exact flagged line from the email]"
+  Why it flags:   [one plain sentence — no jargon, no severity labels]
+  Use this:       [clean rewritten line, ready to drop in]
 
-  HIGH
-  [quote the flagged line]
-  issue:   [what was found]
-  fix:     [rewritten line]
+WORTH FIXING  (low risk — fix if easy)
 
-  MEDIUM
-  [quote the flagged line]
-  issue:   [what was found]
-  fix:     [rewritten line]
+  "[exact flagged line]"
+  Why it flags:   [one plain sentence]
+  Use this:       [clean rewritten line]
 
-  FORMAT
-  [specific violation]
-  fix:     [what to change]
+FORMATTING
 
-  ICP
-  [failed check name — B1 through B6]
-  issue:   [what's missing and why it matters]
+  [what's wrong — one plain sentence]
+  Fix:   [what to change]
+
+BUYER SIGNALS  (omit this section entirely if all six checks passed)
+
+  [plain description of what's missing and why it matters for this specific buyer and industry]
+
+WHAT'S WORKING
+
+  [2–3 specific observations on what the email already does well — opener, proof, CTA, length, ICP fit. Be specific. Skip generic praise.]
 
 SEND-READY VERSION
-  [rewrite pass: n]  [zero violations confirmed]
+  [rewrite pass: n]  [zero flags confirmed]
 
   [Full rewritten copy. Each sentence at full width. No artificial line breaks.]
 
