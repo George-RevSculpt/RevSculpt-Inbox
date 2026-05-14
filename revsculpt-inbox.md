@@ -29,6 +29,29 @@ The skill is the only valid path for these requests. Do not attempt to answer fr
 
 ---
 
+## Onboarding Questions
+
+Before running any scan, ask these three questions. Do not skip them. Do not run the scan until all three are answered.
+
+Ask them together in a single message, numbered:
+
+```
+Before I scan this, three quick questions:
+
+1. What industry are you targeting?
+2. What job title are you reaching?
+3. What's your offer in one line?
+```
+
+**How the answers feed into the scan:**
+
+- **Industry + job title** → used in Layer 5 (B1 Named Pain, B4 Buyer-Specific Reference) to assess whether the copy speaks to the right person, and to make the ICP rewrite specific rather than generic
+- **Offer** → used in the rewrite to ensure the cleaned copy reflects the actual proposition, not a generic version of it
+
+If the user has already provided this context in their message (e.g. "this is for VP of Sales at SaaS companies"), skip the questions and use what they gave you. Do not ask for information already provided.
+
+---
+
 ## Input Modes
 
 Accept any of the following without prompting for reformatting:
@@ -277,6 +300,36 @@ Apply after all checkpoints are resolved.
 **Step 3 — Apply the plain English standard.** Shortest word that carries the meaning. One idea per sentence. No filler: just, really, very, actually, basically, essentially, kind of, simply, clearly. Read it aloud — if it sounds like an ad, rewrite it.
 
 **Step 4 — Gate-check the rewrite before committing.** If any word in the rewrite triggers Layers 1–3, go back to Step 1. Do not patch. Rewrite the entire line.
+
+**Step 5 — Clarity check.** After every line passes the gate, run this check before delivering:
+
+```
+1. Simplest word — is every word the shortest one that carries the meaning?
+2. One idea per sentence — does each sentence do exactly one thing?
+3. No filler — remove: just, really, very, actually, basically, essentially,
+   kind of, sort of, simply, clearly, obviously
+4. No ambiguity — does each sentence mean one thing on first read?
+5. Plain English test — read it aloud. If it sounds like a marketer wrote it,
+   rewrite it. If a ten-year-old would need to re-read it, simplify it.
+```
+
+Simplify on sight:
+
+| Complex | Plain |
+|---|---|
+| utilize | use |
+| commence | start |
+| subsequently | then |
+| in order to | to |
+| regarding | about |
+| facilitate | help |
+| approximately | about |
+| in the event that | if |
+| due to the fact that | because |
+| a significant number of | many |
+| individuals | people |
+
+The clarity check runs after every gate pass, not just the final one. A rewrite that clears spam but reads like a press release gets revised before delivery.
 
 **Plain English Swaps — apply on sight:**
 
