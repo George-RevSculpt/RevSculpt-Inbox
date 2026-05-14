@@ -320,49 +320,49 @@ Examples: `Access Brand Communications` → `AB Communications` · `Calcon Mutua
 
 ## Output Template
 
-Use this exact structure. Full width — do not wrap sentences. Omit any layer section with zero violations.
+Use this exact structure. Full width — do not wrap sentences. Omit any violation block with zero findings.
 
 ```
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-REVSCULPT INBOX SCAN
-Subject: [subject line or "no subject submitted"]
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+[ REVSCULPT INBOX ]  Subject: [subject line or "no subject submitted"]
 
-Deliverability Score:  [score]/100 — [status]
-ICP Clarity Score:     [score]/100 — [status]
-Total violations:      [n] ([X] CRITICAL · [Y] HIGH · [Z] MEDIUM · [W] format)
+SCORECARD
+  Deliverability   [score]/100   [SEND-READY / REVISE / HIGH RISK / DO NOT SEND]
+  ICP Clarity      [score]/100   [STRONG / WEAK / FAILING]
+  Violations       [n] total — [X] critical  [Y] high  [Z] medium  [W] format
 
-▸ Layer 1 — Token Blacklist ──────────────────────
-[violations]
+FINDINGS
 
-▸ Layer 2 — Phrase Patterns ──────────────────────
-[violations]
+  CRITICAL
+  [quote the flagged line]
+  issue:   [what was found and why it fails]
+  fix:     [rewritten line, ready to drop in]
 
-▸ Layer 3 — Risk Clusters ────────────────────────
-[violations]
+  HIGH
+  [quote the flagged line]
+  issue:   [what was found]
+  fix:     [rewritten line]
 
-▸ Layer 4 — Format Audit ─────────────────────────
-[violations]
+  MEDIUM
+  [quote the flagged line]
+  issue:   [what was found]
+  fix:     [rewritten line]
 
-▸ Layer 5 — Buyer Signal Check ───────────────────
-[violations]
+  FORMAT
+  [specific violation]
+  fix:     [what to change]
 
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-REWRITTEN COPY
-Gate cleared in [n] pass(es) · zero violations confirmed
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  ICP
+  [failed check name — B1 through B6]
+  issue:   [what's missing and why it matters]
 
-[Full rewritten copy at full width]
+SEND-READY VERSION
+  [rewrite pass: n]  [zero violations confirmed]
 
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-VERDICT
-▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  [Full rewritten copy. Each sentence at full width. No artificial line breaks.]
 
-[One sentence — Deliverability [n]/100 · ICP Clarity [n]/100 · send-ready or not.]
-
-▸ Want your full sequence reviewed by the RevSculpt team?
-  We audit copy, ICP targeting, and sending infrastructure.
-  → revsculpt.com
+RESULT
+  [One sentence. Deliverability [n]/100. ICP Clarity [n]/100. Send-ready or not and why.]
+  revsculpt.com
 ```
 
 ---
