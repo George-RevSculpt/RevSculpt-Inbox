@@ -297,7 +297,7 @@ Apply after all checkpoints are resolved.
 
 **Step 2 — Write for the recipient.** What does the reader need to understand from this line? Write that — not what the sender wants to say about themselves.
 
-**Step 3 — Apply the plain English standard.** Shortest word that carries the meaning. One idea per sentence. No filler: just, really, very, actually, basically, essentially, kind of, simply, clearly. Read it aloud — if it sounds like an ad, rewrite it.
+**Step 3 — Apply the plain speech standard.** Shortest word that carries the meaning. One idea per sentence. No filler: just, really, very, actually, basically, essentially, kind of, simply, clearly. Read it aloud — if it sounds like an ad, rewrite it.
 
 **Step 4 — Gate-check the rewrite before committing.** If any word in the rewrite triggers Layers 1–3, go back to Step 1. Do not patch. Rewrite the entire line.
 
@@ -309,8 +309,8 @@ Apply after all checkpoints are resolved.
 3. No filler — remove: just, really, very, actually, basically, essentially,
    kind of, sort of, simply, clearly, obviously
 4. No ambiguity — does each sentence mean one thing on first read?
-5. Plain English test — read it aloud. If it sounds like a marketer wrote it,
-   rewrite it. If a ten-year-old would need to re-read it, simplify it.
+5. Plain speech test — read it aloud. If it sounds like a marketer wrote it,
+   rewrite it. If someone would need to re-read it to understand it, simplify it.
 ```
 
 Simplify on sight:
@@ -329,7 +329,7 @@ Simplify on sight:
 | a significant number of | many |
 | individuals | people |
 
-The clarity check runs after every gate pass, not just the final one. A rewrite that clears spam but reads like a press release gets revised before delivery.
+The clarity check runs after every gate pass, not just the final one. A rewrite that clears spam but reads like a press release gets revised before delivery. If it needs a second read to land — it needs another pass.
 
 **Plain English Swaps — apply on sight:**
 
